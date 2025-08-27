@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigiSkills for Technological Education | Educational Technology Solutions</title>
+    <meta name="description" content="DigiSkills for Technological Education - Leading provider of educational technology solutions and training programs, creators of Ledger Lingo accounting app.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #153C8A 0%, #57ADAC 100%); /* Updated gradient */
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo img {
+            height: 40px; /* Adjusted height for the new logo */
+            width: auto; /* Allow width to adjust proportionally */
+            border-radius: 0; /* Remove border-radius for the new logo */
+        }
+
+        .logo-text {
+            display: none; /* Hide the text as the logo image contains text */
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #153C8A; /* Updated hover color */
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(21, 60, 138, 0.9), rgba(87, 173, 172, 0.9)); /* Updated gradient */
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('/home/ubuntu/upload/search_images/lQhJVRqR2neP.jpg') center/cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero .description {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            opacity: 0.8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #57ADAC; /* Updated CTA button color */
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(87, 173, 172, 0.3); /* Updated shadow color */
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(87, 173, 172, 0.4); /* Updated shadow color */
+        }
+
+        /* Main Content */
+        main {
+            background: white;
+            margin: -50px 20px 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .section {
+            padding: 4rem 3rem;
+        }
+
+        .section:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            text-align: center;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .about-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .about-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .about-card i {
+            font-size: 3rem;
+            color: #153C8A; /* Updated icon color */
+            margin-bottom: 1rem;
+        }
+
+        .about-card h3 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        /* Brand Section */
+        .brand-showcase {
+            background: linear-gradient(135deg, #153C8A, #57ADAC); /* Updated gradient */
+            color: white;
+            padding: 4rem 3rem;
+            text-align: center;
+            border-radius: 20px;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .brand-showcase::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('/home/ubuntu/upload/search_images/uRgZP2XL3DUT.jpg') center/cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .brand-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .brand-showcase h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .app-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .feature i {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .contact-card i {
+            font-size: 2.5rem;
+            color: #153C8A; /* Updated icon color */
+            margin-bottom: 1rem;
+        }
+
+        .contact-card h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .contact-card a {
+            color: #153C8A; /* Updated link color */
+            text-decoration: none;
+        }
+
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #57ADAC; /* Updated footer heading color */
+        }
+
+        .footer-section a {
+            color: #bbb;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: #57ADAC; /* Updated social links background color */
+            color: white;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            transition: background 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: #153C8A; /* Updated social links hover color */
+        }
+
+        /* Image Sections */
+        .image-section {
+            background: url('/home/ubuntu/upload/search_images/rum9qI35YFi8.jpg') center/cover;
+            padding: 4rem 0;
+            position: relative;
+            color: white;
+            text-align: center;
+        }
+
+        .image-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 0;
+        }
+
+        .image-section-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .section {
+                padding: 3rem 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            main {
+                margin: -30px 10px 0;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #2c3e50;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <img src="assets/photos/digiskills_logo.png" alt="DigiSkills Logo" height="40">
+                <span class="logo-text">DigiSkills</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="fade-in-up">DigiSkills for Technological Education</h1>
+                <p class="subtitle fade-in-up">Empowering Education Through Technology</p>
+                <p class="description fade-in-up">
+                    Leading provider of innovative educational technology solutions, transforming the way students learn and engage with complex subjects through cutting-edge digital platforms and interactive learning experiences.
+                </p>
+                <a href="#contact" class="cta-button fade-in-up">Get Started Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- About Section -->
+        <section id="about" class="section">
+            <h2 class="section-title">About DigiSkills</h2>
+            <p class="section-subtitle">
+                DigiSkills for Technological Education (Single Person LLC) is a registered legal entity in Cairo, Egypt, dedicated to revolutionizing educational experiences through innovative technology solutions and comprehensive training programs.
+            </p>
+            
+            <div class="about-grid">
+                <div class="about-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Educational Excellence</h3>
+                    <p>Committed to delivering high-quality educational content and training programs that meet international standards and industry requirements, ensuring students receive world-class education.</p>
+                </div>
+                <div class="about-card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Technology Innovation</h3>
+                    <p>Leveraging cutting-edge technology to create engaging, interactive learning experiences that enhance student comprehension, retention, and practical application of knowledge.</p>
+                </div>
+                <div class="about-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Student-Centered Approach</h3>
+                    <p>Designing solutions that prioritize student needs, learning styles, and career development goals in today's rapidly evolving digital economy and technological landscape.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="section">
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-subtitle">
+                Comprehensive educational technology solutions tailored to meet diverse learning needs and institutional requirements
+            </p>
+            
+            <div class="about-grid">
+                <div class="about-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Mobile Learning Applications</h3>
+                    <p>Development of interactive mobile applications that make learning accessible anytime, anywhere, with engaging content, user-friendly interfaces, and offline capabilities for continuous learning.</p>
+                </div>
+                <div class="about-card">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <h3>Professional Training Programs</h3>
+                    <p>Comprehensive training programs designed to enhance digital literacy and technical skills for educators, students, and professionals seeking career advancement in technology-driven fields.</p>
+                </div>
+                <div class="about-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Educational Technology Consulting</h3>
+                    <p>Expert consulting services to help educational institutions integrate technology effectively into their curriculum, teaching methodologies, and administrative processes for improved outcomes.</p>
+                </div>
+                <div class="about-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Custom Software Development</h3>
+                    <p>Tailored software solutions for educational institutions, including learning management systems, student information systems, and specialized educational tools.</p>
+                </div>
+                <div class="about-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>AI-Powered Learning Solutions</h3>
+                    <p>Implementation of artificial intelligence and machine learning technologies to create personalized learning experiences and intelligent tutoring systems.</p>
+                </div>
+                <div class="about-card">
+                    <i class="fas fa-globe"></i>
+                    <h3>Digital Transformation</h3>
+                    <p>Complete digital transformation services for educational institutions, helping them transition from traditional methods to modern, technology-enhanced learning environments.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technology Showcase -->
+        <section class="image-section">
+            <div class="container">
+                <div class="image-section-content">
+                    <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Modern Learning Environments</h2>
+                    <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto;">
+                        We create state-of-the-art digital learning environments that combine the best of traditional education with innovative technology solutions, ensuring students are prepared for the future.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Brand Showcase -->
+        <section id="products" class="brand-showcase">
+            <div class="brand-content">
+                <h2>Our Flagship Product</h2>
+                <h3 style="font-size: 2rem; margin-bottom: 1rem; color: #ffd700;">Ledger Lingo</h3>
+                <p style="font-size: 1.3rem; margin-bottom: 2rem;">"The Exciting World of Accounting"</p>
+                <p style="margin-bottom: 2rem;">
+                    An innovative mobile application that transforms accounting education through interactive lessons, 
+                    practical scenarios, and engaging content designed specifically for Arabic-speaking students and business professionals.
+                </p>
+                
+                <div class="app-features">
+                    <div class="feature">
+                        <i class="fas fa-book-open"></i>
+                        <h4>Interactive Lessons</h4>
+                        <p>Comprehensive accounting courses with step-by-step guidance, real-world examples, and practical exercises that reinforce learning.</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-language"></i>
+                        <h4>Bilingual Support</h4>
+                        <p>Content available in both Arabic and English with instant translation features to enhance learning accessibility and comprehension.</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-trophy"></i>
+                        <h4>Gamified Learning</h4>
+                        <p>Achievement systems, progress tracking, and interactive challenges to motivate continuous learning and skill development.</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-certificate"></i>
+                        <h4>Certification Ready</h4>
+                        <p>Prepare students for professional accounting certifications and career advancement with industry-standard curriculum and assessments.</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-headphones"></i>
+                        <h4>Audio Learning</h4>
+                        <p>Synchronized audio lessons with text for enhanced comprehension and pronunciation practice in accounting terminology.</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-story"></i>
+                        <h4>Story-Based Learning</h4>
+                        <p>Practical stories that convert accounting concepts into real-life scenarios, making complex topics easier to understand and remember.</p>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 3rem;">
+                    <a href="https://ledger-lingo.com" target="_blank" class="cta-button">
+                        <i class="fas fa-external-link-alt"></i> Visit Ledger Lingo Website
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <h2 class="section-title">Contact Us</h2>
+            <p class="section-subtitle">
+                Ready to transform your educational experience? Get in touch with our team today and discover how we can help you achieve your learning goals.
+            </p>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p><a href="mailto:info@digiskills-edu.online">info@digiskills-edu.online</a></p>
+                    <p>We respond to all inquiries within 24 hours during business days</p>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Address</h3>
+                    <p>Building 6056, Al-Ma'arag Al-Ouly<br>
+                    Zahraa El-Maadi, Cairo, Egypt</p>
+                    <p>Visit us during business hours for consultations</p>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Business Hours</h3>
+                    <p>Sunday - Thursday: 9:00 AM - 6:00 PM<br>
+                    Friday - Saturday: Closed</p>
+                    <p>Cairo Time (UTC+2)</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>DigiSkills</h3>
+                    <p>Empowering education through innovative technology solutions and comprehensive training programs. Registered in Cairo, Egypt as a Single Person LLC.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="#about">About Us</a>
+                    <a href="#services">Services</a>
+                    <a href="#products">Products</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Products & Services</h3>
+                    <a href="https://www.ledger-lingo.com" target="_blank">Ledger Lingo App</a>
+                    <a href="#services">Training Programs</a>
+                    <a href="#services">Consulting Services</a>
+                    <a href="#services">Custom Development</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal Information</h3>
+                    <p>Registered in Cairo, Egypt</p>
+                    <p>Single Person LLC</p>
+                    <p>Educational Technology Provider</p>
+                    <p>License: Educational Services</p>
+                </div>
+            </div>
+            
+            <div class="social-links">
+                <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+            
+            <p style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #444;">
+                &copy; 2024 DigiSkills for Technological Education. All rights reserved. | 
+                <a href="#" style="color: #57ADAC;">Privacy Policy</a> | 
+                <a href="#" style="color: #57ADAC;">Terms of Service</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('.section, .about-card, .contact-card, .feature').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Mobile menu functionality
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    navLinks.style.display = 'none';
+                }
+            });
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                navLinks.style.display = 'flex';
+            } else {
+                navLinks.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
+
